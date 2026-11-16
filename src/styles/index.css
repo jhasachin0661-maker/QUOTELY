@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbars with Velvet Plum palette */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171528;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D2747;
+  border-radius: 4px;
+  border: 2px solid #171528;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3D355F;
+}
+
+/* Hide scrollbar while keeping scroll functionality (for mobile stat pills) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Ambient Nocturne Glow */
+.nocturne-ambient {
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(113, 103, 248, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(255, 118, 94, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(40, 35, 63, 0.5) 0%, transparent 70%),
+    #171528;
+}
+
+/* Fluid Quote Typography using clamp */
+.quote-hero-text {
+  font-size: clamp(1.4rem, 3.2vw + 0.5rem, 2.85rem);
+  line-height: 1.28;
+}
+
+/* Subtle luxury grain effect */
+.editorial-texture {
+  position: relative;
+}
+
+.editorial-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(232, 227, 242, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.6;
+}
